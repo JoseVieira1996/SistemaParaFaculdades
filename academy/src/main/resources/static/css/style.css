@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+nav{height: 90px; color: #fff}
+a{cursor: pointer; font-weight: bold;}
+a.btn-nav:hover {color: #BA68C8;}
+
+.neo-section{
+	min-height: 700px;
+	background-size: cover !important;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	padding: 30px;
+	position: relative;
+		
+}
+
+
+.wm {width: 50%; float: left;}
+.clear {clear: both;}
+.center {text-align: center;}
+.neo-container {max-width: 1280px; padding: 2% 2%; margin: 0 auto; margin-top:200px;}
+.sombra{width: 100%; height: 100%; top:0; left:0; position: absolute; background: rgba(0,0,0,0.7); z-index: 100;}
+.neo-section > .neo-container {
+	position: relative;
+	z-index: 105;
+}
+
+.texto-centro{color: rgb(0, 0, 0); font-size: 3em; font-family: 'Ubuntu'; font-weight: bold}
+.btn {width: 280px; color: rgb(0, 0, 0); border-radius: 10px; border: 2px solid #a55eea; padding: 5px;}
+.botoes {padding: 2% 15%;}
+.btn:hover{color: #CE93D8; background-color: rgba(0,0,0,0.5)}
+.rodape {color: #fff; background-color:#4527A0; text-align: center; font-size: 1.25em; padding: 15px}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 667px){
+	.wm{width: 100%;}
+	nav {height: 100%;}
+	.neo-container{margin-top: 210px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http:www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<title>Academy</title>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:ital,wght@1,300&family=Yusei+Magic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+	<div th:replace="fragmento/fragmentos ::cabecalho"></div>
+	
+	<section class="neo-section" style="background-image: url('img/bg-index.jpg');">
+	
+		<div class="sombra"></div>
+		<div class="center neo-container">
+			<h1 class="texto-centro">Sistema de Gerenciamento de Alunos</h1>
+		
+		
+		<div class="botoes">
+		
+		<div class="wm">
+			<a class="btn" th:href="@{/inserirAlunos}">CADASTRAR ALUNO</a>
+		</div>
+		
+		<div class="wm">
+			<h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5>	
+		</div>
+		
+		<div class="clear"></div>
+			</div>
+		</div>
+	
+	
+	
+	</section>
+	
+	<div class="modal fade" id="modalPesquisa">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Encontre um aluno</h5>
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+				</div>
+				<form method="post" action="pesquisar-aluno" th:object="${aluno}">
+					<div class="modal-body">
+						<input type="text" placeholder="Pesquise um aluno.." th:field="*{nome}" class="form-control">
+					</div>
+						<div class="modal-footer">
+							<button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+							<button type="submit" class="btn btn-sucess">Pesquisar</button>
+						</div>
+				
+				</form>
+			
+			
+			</div>
+		
+		</div>
+	
+	</div>
+
+	<div th:replace="fragmento/fragmentos ::rodape"></div>
+	
+
+
+
+	
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	
+
+</body>
+</html>

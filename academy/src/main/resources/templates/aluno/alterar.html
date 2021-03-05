@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http:www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<title>Academy</title>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:ital,wght@1,300&family=Yusei+Magic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div th:replace="fragmento/fragmentos ::cabecalho"></div>
+	<div class="container" style="margin-top: 50px;">
+		<br>
+		<h4>Alterar Alunos</h4>
+		<br>
+		<hr>
+			<form method="post" action="/alterar" th:object=${aluno} autocomplete="off">
+			<input type="hidden" th:field="*{id}">
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+				<label>Nome do Aluno:</label>
+				<input class="form-control" placeholder="Ex: Martin" th:field="*{nome}">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+				<label>Turno</label>
+				<input class="form-control" placeholder="Ex: Manhã" th:field="*{turno}">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+				<label>Gerar matricula</label>
+					<input readonly="readonly" class="form-control" id="matricula" th:field="*{matricula}">
+					<button type="button" onclick="GerarMatricula();" class="btn btn-dark" style="margin-top:10px">Gerar</button>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+				<label>Selecione o curso</label>
+				<select class="form-control"  th:field="*{curso}">
+					<option th:each="curso : ${T(br.com.academy.enums.Curso).values()}"
+					th:value="${curso}" th:text="${curso}">
+					</option>
+				</select>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+				<label>Selecione o status</label>
+				<select class="form-control" th:field="*{status}">
+					<option th:each="status : ${T(br.com.academy.enums.Status).values()}"
+					th:value="${status}" th:text="${status}">
+					</option>
+				</select>
+				</div>
+			</div>
+			
+			<div class="row">
+				<button type="submit" class="btn btn-sucess offset-md-5">SALVAR</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="btn btn-outline-danger">VOLTAR</a>			
+			</div>
+			
+			
+			</form>
+	
+	
+	
+	</div>
+	
+	
+	
+	
+	<div th:replace="fragmento/fragmentos ::rodape"></div>
+	
+
+
+
+	<script src="js/main.js"></script>
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
